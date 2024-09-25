@@ -21,7 +21,7 @@ export const socials = []
 export const shops = [
     {
         "type": "tokopedia",
-        "value": "https://vt.tiktok.com/ZS24tLEPt/?page=Mall",
+        "value": "https://www.tokopedia.com/holyindustries",
     },
     {
         "type": "shopee",
