@@ -1,5 +1,6 @@
 export const appName = "Holy Industries"
 export const companyEst = 2015
+export const apiPath = ""
 
 export const contacts = [
     {

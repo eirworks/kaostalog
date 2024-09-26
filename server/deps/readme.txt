@@ -1,0 +1,1 @@
+Download and install latest RedBeans and copy rb.php here!
