@@ -51,8 +51,10 @@ with open(data_csv, 'r', newline='') as f:
     for row in reader:
         new_data.append({
             "id": row[0],
-            "name": product_title.format(row[1]),
+            "title": product_title.format(row[1]),
+            "name": row[1],
             "images": [n+1 for n in range(int(row[2]))],
+            "image_urls": ["/products/{}/{}.jpg".format(row[0], n+1) for n in range(int(row[2]))],
             "sizes": row[3].split(","),
             "material": product_material,
             "colors": [n for n in row[5].split(",")],

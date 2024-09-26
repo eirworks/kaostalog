@@ -4,16 +4,15 @@
             Hasil pencarian untuk "{{ props.search }}"
         </div>
         <div class="grid grid-cols-3 gap-5">
-            <div v-for="n in 10">
-                <RouterLink :to="`/products/${n}`">
+            <div v-for="product in store.products">
+                <RouterLink :to="`/products/${product.id}`">
                     <div class="flex justify-center">
-                        <div class="shrink w-full h-[250px] bg-gray-500 rounded"></div>
+                        <div class="shrink w-full h-full bg-gray-500 rounded">
+                            <img :src="product.image_urls[0]" :alt="product.name">
+                        </div>
                     </div>
                     <div class="text-center">
-                        Product #{{ n }}
-                    </div>
-                    <div class="text-center text-gray-500 text-sm">
-                        Rp. 50.000
+                        {{ product.name }}
                     </div>
                 </RouterLink>
             </div>
@@ -24,7 +23,12 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
+import { useProductsStore } from '@/store/products';
 const props = defineProps({
     'search': String
 })
+
+const store = useProductsStore()
+
+store.getProducts()
 </script>
