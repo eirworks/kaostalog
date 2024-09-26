@@ -16,3 +16,24 @@ export const useProductsStore = defineStore('products', () => {
 
     return {products, getProducts}
 })
+
+export const useViewProductStore = defineStore('product', () => {
+    const product = ref(null);
+    const loading = ref(false)
+
+    function getProduct(id: Number) {
+        product.value = null
+        loading.value = true
+        axios.get(apiPath, {
+            params: {
+                'product_id': id
+            }
+        })
+            .then(function(response) {
+                product.value = response.data.product
+                loading.value = false
+            })
+    }
+
+    return { product, getProduct, loading }
+})
