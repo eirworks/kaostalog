@@ -8,7 +8,11 @@ export const useProductsStore = defineStore('products', () => {
 
     function getProducts(keyword = "") {
         // call axios to server
-        axios.get(apiPath)
+        axios.get(apiPath, {
+            params: {
+                q: keyword
+            }
+        })
             .then(function(response) {
                 products.value = response.data.products
             })
