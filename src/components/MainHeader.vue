@@ -15,9 +15,9 @@
             </div>
             <nav>
                 <menu class="flex space-x-3">
-                    <li><a href="#">Kaos</a></li>
-                    <li><a href="#">Aksesoris</a></li>
-                    <li><a href="#" class="rounded-full bg-brand text-white px-3 py-2">Hubungi Kami</a></li>
+                    <!-- <li><a href="#">Kaos</a></li>
+                    <li><a href="#">Aksesoris</a></li> -->
+                    <li><RouterLink :to="{name: 'about'}" class="rounded-full bg-brand text-white px-3 py-2">Hubungi Kami</RouterLink></li>
                 </menu>
             </nav>
         </header>

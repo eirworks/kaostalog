@@ -6,8 +6,8 @@
         </div>
         <div>
             <menu class="flex space-x-3 justify-center md:justify-normal">
-                <li><a href="#">Katalog</a></li>s
-                <li><a href="#">Tentang Kami</a></li>
+                <!-- <li><a href="#">Katalog</a></li> -->
+                <li><RouterLink :to="{name:'about'}">Tentang Kami</RouterLink></li>
             </menu>
         </div>
     </footer>
