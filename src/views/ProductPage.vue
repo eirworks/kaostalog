@@ -44,14 +44,13 @@
     </div>
 </template>
 
-<script setup>
-import DataItem from '../components/DataItem.vue'
+<script setup lang="ts">
+import DataItem from '@/components/DataItem.vue';
 import ShopList from '@/components/ShopList.vue';
 import Contacts from '@/components/Contacts.vue';
 import { useViewProductStore } from '@/store/products';
 import { useRoute } from 'vue-router';
 import ImageGallery from '@/components/ImageGallery.vue';
-import { marked } from 'marked';
 
 const route = useRoute()
 const store = useViewProductStore()

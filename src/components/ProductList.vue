@@ -21,7 +21,7 @@
     
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { RouterLink } from 'vue-router';
 import { useProductsStore } from '@/store/products';
 const props = defineProps({

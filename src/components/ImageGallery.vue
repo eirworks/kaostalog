@@ -26,11 +26,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, type PropType } from 'vue';
 
 const props = defineProps({
     'images': {
-        type: Array,
+        type: Array as PropType<string[]>,
         default: []
     }
 })
