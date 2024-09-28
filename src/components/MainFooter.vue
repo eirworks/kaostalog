@@ -1,14 +1,13 @@
 <template>
-    <footer class="container md:w-2/3 mx-auto flex space-x-3 py-10 text-sm">
+    <footer class="container md:w-2/3 mx-auto flex flex-col md:flex-row space-x-3 py-10 text-sm">
         <div class="flex-1 text-gray-500">
-            <div class="mb-5">&copy; {{ companyEst }} - {{ new Date().getFullYear() }} {{ appName }}</div>
+            <div class="mb-5 text-center md:text-start">&copy; {{ companyEst }} - {{ new Date().getFullYear() }} {{ appName }}</div>
             <ShopList />
         </div>
         <div>
-            <menu class="flex space-x-3">
+            <menu class="flex space-x-3 justify-center md:justify-normal">
+                <li><a href="#">Katalog</a></li>s
                 <li><a href="#">Tentang Kami</a></li>
-                <li><a href="#">Katalog</a></li>
-                <li><a href="#" class="font-bold">Hubungi Kami</a></li>
             </menu>
         </div>
     </footer>

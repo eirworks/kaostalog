@@ -17,15 +17,20 @@ Material : Premium 24s Reactive. (baca deskripsi di bawah ini tentang spesifikas
 Ink / Sablon : Direct Print High Quality (Kuat dan Awet)
 
 Keunggulan :
-*Lebih mudah menyerap keringat & Adem.
-*Sablon Kuat & Tahan Lama.
+* Lebih mudah menyerap keringat & Adem.
+* Sablon Kuat & Tahan Lama.
 
-Premium 24s Reactive.
-1.Tidak kaku , Lembut & nyaman.
-2.Menyerap Keringat & Tidak Gerah.
-3.Ringan.
-4.Tidak kasar.
-5.Bila Di pakai terasa adem.
+**Premium 24s Reactive.**
+
+1. Tidak kaku, Lembut, & nyaman.
+
+2. Menyerap Keringat & Tidak Gerah.
+
+3. Ringan.
+
+4. Tidak kasar.
+
+5. Bila Di pakai terasa adem.
 
 Barang akan di proses paling lambat 2X24 jam setelah pembayaran,
 

@@ -14,6 +14,8 @@ if ($_GET['product_id']) {
         }
     }
 
+    $foundItem['description'] = nl2br($foundItem['description']);
+
     json_response([
         'product' => $foundItem,
         'product_id' => $_GET['product_id'],
@@ -26,6 +28,11 @@ if ($_GET['product_id']) {
             return str_contains(strtolower($product['name']), $query);
         });
     }
+
+    $products = array_map(function($product) {
+        $product['description'] = nl2br($product['description']);
+        return $product;
+    }, $products);
 
     json_response([
         'products' => $products,

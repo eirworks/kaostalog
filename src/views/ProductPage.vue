@@ -1,5 +1,5 @@
 <template>
-    <div class="md:w-2/3 container mx-auto">
+    <div class="md:w-2/3 container mx-auto p-3">
         <div v-if="store.product === null && store.loading == false">
             <div class="text-center p-10 bg-red-200 text-red-800">
                 Maaf, produk tidak ditemukan...
@@ -12,9 +12,8 @@
                 <div class="grid md:grid-cols-3 gap-5">
                     <div class="col-span-2">
                         <div class="mb-3 text-sm text-gray-500">Tentang produk ini</div>
-                        <div>
-                            {{ store.product.description }}
-                        </div>
+                        <div v-html="(store.product.description)"></div>
+                        <!-- <div>{{ store.product.description }}</div> -->
                     </div>
                     <div>
                         <DataItem name="Ukuran Tersedia:">
@@ -52,6 +51,7 @@ import Contacts from '@/components/Contacts.vue';
 import { useViewProductStore } from '@/store/products';
 import { useRoute } from 'vue-router';
 import ImageGallery from '@/components/ImageGallery.vue';
+import { marked } from 'marked';
 
 const route = useRoute()
 const store = useViewProductStore()

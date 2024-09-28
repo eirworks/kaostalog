@@ -1,7 +1,7 @@
 <template>
     <div class="my-5">
         <div class="text-gray-500 text-center text-sm mb-5">Hubungi Kami</div>
-        <div class="flex space-x-5 justify-center">
+        <div class="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5 items-center md:justify-center">
             <div v-for="contact in contacts" class="flex space-x-3 items-center">
                 <div v-if="contact.type !== 'whatsapp'"><img class="w-[24px] h-[24px]" :src="`/${contact.type}.svg`" :alt="contact.type"></div>
                 <div v-if="contact.type === 'whatsapp'">

@@ -3,7 +3,7 @@
         <div class="mb-5" v-if="props.search">
             Hasil pencarian untuk "{{ props.search }}"
         </div>
-        <div class="grid grid-cols-3 gap-5">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
             <div v-for="product in store.products">
                 <RouterLink :to="`/products/${product.id}`">
                     <div class="flex justify-center">
