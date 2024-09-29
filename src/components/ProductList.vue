@@ -1,7 +1,13 @@
 <template>
     <div>
-        <div class="mb-5" v-if="props.search">
-            Hasil pencarian untuk "{{ props.search }}"
+        <div class="mb-5 flex space-x-3 items-center" v-if="store.keyword">
+            <div class="flex-1">
+                Hasil pencarian untuk "{{ store.keyword }}" 
+                menghasilkan {{ store.products.length }} produk.
+            </div>
+            <div>
+                <button class="text-sm text-gray-500" @click="store.clearSearch()">Hapus pencarian</button>
+            </div>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
             <div v-for="product in store.products">

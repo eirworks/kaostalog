@@ -17,6 +17,7 @@ interface Product {
 
 export const useProductsStore = defineStore('products', () => {
     const products: Ref<Product[]> = ref([])
+    const keyword = ref("")
 
     function getProducts(keyword = "") {
         // call axios to server
@@ -26,16 +27,20 @@ export const useProductsStore = defineStore('products', () => {
                 if (keyword !== "") {
                     console.log("Filter by ", keyword)
                     products.value = response.data.filter(function(p: Product) {
-                        return p.name.includes(keyword)
+                        return p.name.toLowerCase().includes(keyword.toLowerCase())
                     })
                 } else {
-                    console.debug("No filter!")
                     products.value = response.data
                 }
             })
     }
 
-    return {products, getProducts}
+    function clearSearch() {
+        keyword.value = ""
+        getProducts()
+    }
+
+    return {products, getProducts, keyword, clearSearch}
 })
 
 export const useViewProductStore = defineStore('product', () => {
