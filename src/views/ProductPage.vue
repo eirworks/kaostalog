@@ -12,7 +12,7 @@
                 <div class="grid md:grid-cols-3 gap-5">
                     <div class="col-span-2">
                         <div class="mb-3 text-sm text-gray-500">Tentang produk ini</div>
-                        <div v-html="(store.product.description)"></div>
+                        <div v-html="nl2br(store.product.description)"></div>
                         <!-- <div>{{ store.product.description }}</div> -->
                     </div>
                     <div>
@@ -51,6 +51,7 @@ import Contacts from '@/components/Contacts.vue';
 import { useViewProductStore } from '@/store/products';
 import { useRoute } from 'vue-router';
 import ImageGallery from '@/components/ImageGallery.vue';
+import { nl2br } from '@/nl2br';
 
 const route = useRoute()
 const store = useViewProductStore()

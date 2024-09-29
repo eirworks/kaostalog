@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { ref, type Ref } from "vue";
-import { apiPath } from "@/site";
+import { productsApi, productApi, categoriesApi, descriptionApi } from "@/api";
 import axios from "axios";
 
 interface Product {
@@ -20,13 +20,18 @@ export const useProductsStore = defineStore('products', () => {
 
     function getProducts(keyword = "") {
         // call axios to server
-        axios.get(apiPath, {
-            params: {
-                q: keyword
-            }
-        })
+        axios.get(productsApi)
             .then(function(response) {
-                products.value = response.data.products
+                // filter by keyword in here
+                if (keyword !== "") {
+                    console.log("Filter by ", keyword)
+                    products.value = response.data.filter(function(p: Product) {
+                        return p.name.includes(keyword)
+                    })
+                } else {
+                    console.debug("No filter!")
+                    products.value = response.data
+                }
             })
     }
 
@@ -40,14 +45,23 @@ export const useViewProductStore = defineStore('product', () => {
     function getProduct(id: any) {
         product.value = null
         loading.value = true
-        axios.get(apiPath, {
-            params: {
-                'product_id': id
-            }
-        })
+        axios.get(productApi(id))
             .then(function(response) {
-                product.value = response.data.product
+                product.value = response.data
                 loading.value = false
+            })
+    }
+
+    function getDescription(id: any) 
+    {
+        axios.get(descriptionApi)
+            .then(function(response) {
+                // update current product's description 
+                if (product.value !== null) {
+                    let p = product.value
+                    p.description = response.data.description
+                    product.value = p
+                }
             })
     }
 
