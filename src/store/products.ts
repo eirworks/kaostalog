@@ -19,15 +19,15 @@ export const useProductsStore = defineStore('products', () => {
     const products: Ref<Product[]> = ref([])
     const keyword = ref("")
 
-    function getProducts(keyword = "") {
+    function getProducts() {
         // call axios to server
         axios.get(productsApi)
             .then(function(response) {
                 // filter by keyword in here
-                if (keyword !== "") {
-                    console.log("Filter by ", keyword)
+                if (keyword.value !== "") {
+                    console.log("Filter by ", keyword.value)
                     products.value = response.data.filter(function(p: Product) {
-                        return p.name.toLowerCase().includes(keyword.toLowerCase())
+                        return p.name.toLowerCase().includes(keyword.value.toLowerCase())
                     })
                 } else {
                     products.value = response.data
