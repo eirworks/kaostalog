@@ -67,6 +67,6 @@
     function searchProduct() {
         router.push('/')
         store.keyword = query.value
-        store.getProducts(query.value)
+        store.getProducts()
     }
 </script>
