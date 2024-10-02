@@ -6,12 +6,16 @@
         <template v-else>
             <div class="flex justify-center mb-5 items-center space-x-3">
                 <div>
-                    <button type="button" class="rounded border border-black hover:bg-gray-200 p-3" @click="previousImage()">&larr;</button>
+                    <button type="button" class="w-14 rounded bg-gray-100 hover:bg-gray-300 p-3" @click="previousImage()"><ChevronLeftIcon /></button>
                 </div>
                 <div class="w-1/2 h-full bg-gray-500">
                     <img :src="currentImage" alt="Product Image">
                 </div>
-                <div><button type="button" class="rounded border border-black hover:bg-gray-200 p-3" @click="nextImage()">&rarr;</button></div>
+                <div>
+                    <button type="button" class="w-14 rounded bg-gray-100 hover:bg-gray-300 p-3" @click="nextImage()">
+                        <ChevronRightIcon />
+                    </button>
+                </div>
             </div>
             <div class="my-5 flex justify-center space-x-3 flex-wrap">
                 <div v-for="img, idx in props.images">
@@ -27,6 +31,7 @@
 
 <script setup lang="ts">
 import { ref, type PropType } from 'vue';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/solid';
 
 const props = defineProps({
     'images': {
