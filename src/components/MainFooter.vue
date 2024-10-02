@@ -5,10 +5,13 @@
             <ShopList />
         </div>
         <div>
-            <menu class="flex space-x-3 justify-center md:justify-normal">
+            <menu class="flex space-x-3 justify-center md:justify-end">
                 <!-- <li><a href="#">Katalog</a></li> -->
                 <li><RouterLink :to="{name:'about'}">Tentang Kami</RouterLink></li>
             </menu>
+            <div>
+                <Socials simple no-title />
+            </div>
         </div>
     </footer>
 </template>
@@ -16,4 +19,5 @@
 <script setup lang="ts">
 import { appName, companyEst, shops } from '@/site';
 import ShopList from '@/components/ShopList.vue';
+import Socials from './Socials.vue';
 </script>

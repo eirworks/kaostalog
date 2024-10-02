@@ -4,7 +4,7 @@
             <div class="text-3xl md:text-2xl font-thin">
                 <RouterLink to="/" class="flex space-x-3 items-center">
                     <img class="w-[50px] h-[50px]" src="/logo.png" alt="Logo">
-                    <div>{{ appName }}</div>
+                    <div class="brand-text">{{ appName }}</div>
                 </RouterLink>
             </div>
             <div class="flex-1 flex space-x-1">

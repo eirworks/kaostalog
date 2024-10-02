@@ -45,7 +45,7 @@
                 
             </div>
             <ShopList center get-it-on />
-            <Contacts />
+            <Socials />
         </div>
     </div>
 </template>
@@ -53,13 +53,12 @@
 <script setup lang="ts">
 import DataItem from '@/components/DataItem.vue';
 import ShopList from '@/components/ShopList.vue';
-import Contacts from '@/components/Contacts.vue';
 import { useViewProductStore } from '@/store/products';
 import { useRoute } from 'vue-router';
 import ImageGallery from '@/components/ImageGallery.vue';
-import { nl2br } from '@/nl2br';
 import { marked } from 'marked';
 import { ref } from 'vue';
+import Socials from '@/components/Socials.vue';
 
 const route = useRoute()
 const store = useViewProductStore()

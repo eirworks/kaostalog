@@ -17,12 +17,31 @@ export const contacts = [
     }
 ]
 
-export const socials = []
+export const socials = [
+    {
+        "type": "whatsapp",
+        "name": "WhatsApp",
+        "text": "6282140634747",
+        "value": "https://wa.me/6282140634747"
+    },
+    {
+        "type": "tiktok",
+        "name": "TikTok",
+        "text": "holy.industries",
+        "value": "https://tiktok.com/@holy.industries",
+    },
+    {
+        "type": "instagram",
+        "name": "Instagram",
+        "text": "holy_industries",
+        "value": "https://instagram.com/holy_industries",
+    },
+]
 
 export const shops = [
     {
-        "type": "tokopedia",
-        "value": "https://www.tokopedia.com/holyindustries",
+        "type": "tiktok",
+        "value": "https://vt.tiktok.com/ZS24tLEPt/?page=Mall",
     },
     {
         "type": "shopee",

@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "futura";
+  src: url("$fonts/Futura Std Medium.ttf");
+}
+
+.brand-text {
+  font-family: 'futura', 'verdana', "sans-serif";
+}
+
 /* @import './base.css';
 
 #app {
