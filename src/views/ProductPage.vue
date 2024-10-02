@@ -17,10 +17,16 @@
                     </div>
                     <div>
                         <DataItem name="Ukuran Tersedia:">
-                            <div class="flex space-x-3">
+                            <!-- <div class="flex space-x-3">
                                 <div v-for="s in store.product.sizes" 
                                     class="uppercase" 
                                     :key="s">{{ s }}</div>
+                            </div> -->
+                            <div class="mt-3">
+                                <a href="/size_guide.jpg" target="_blank" class="mb-1">
+                                    <img src="/size_guide.jpg" alt="Panduan Ukuran">
+                                </a>
+                                <!-- <button class="w-full text-xs underline text-center text-gray-500" @click="showSizeGuide = !showSizeGuide">{{ showSizeGuide ? 'Sembunyikan' : 'Lihat panduan ukuran' }}</button> -->
                             </div>
                         </DataItem>
                         <DataItem name="Warna">
@@ -53,9 +59,12 @@ import { useRoute } from 'vue-router';
 import ImageGallery from '@/components/ImageGallery.vue';
 import { nl2br } from '@/nl2br';
 import { marked } from 'marked';
+import { ref } from 'vue';
 
 const route = useRoute()
 const store = useViewProductStore()
+
+const showSizeGuide = ref(false)
 
 store.getProduct(route.params.id)
 </script>
