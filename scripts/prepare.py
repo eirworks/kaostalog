@@ -1,6 +1,9 @@
+import glob
 import json
 import os
 import shutil
+
+from image import make_preview
 
 
 def copy_products_data():
@@ -51,12 +54,24 @@ def create_description_json():
 
     print("Description JSON created")
 
-if __name__ == '__main__':
-    # copy data/data.json to /public/data/products.json
-    copy_products_data()
-    # extract each items of data.json and make /public/data/products/{id}.json
-    extract_product_data()
-    # copy data/categories.json to /public/data/categories.json
-    copy_categories_data()
+def prepare_thumbnails():
+    image_dirs_path = os.path.join(os.path.dirname(__file__), '..', 'public', 'products')
+    image_dirs = glob.glob("{}/*/".format(image_dirs_path))
 
-    create_description_json()
+    for img_dir in image_dirs:
+        print(img_dir)
+        images = glob.glob("{}/*.jpg".format(img_dir))
+
+        for image in images:
+            if os.path.basename(image) != "1.jpg":
+                continue
+            dest = make_preview(image)
+            print("Thumbnail Image: {}".format(dest))
+
+if __name__ == '__main__':
+    prepare_thumbnails()
+
+    # copy_products_data()
+    # extract_product_data()
+    # copy_categories_data()
+    # create_description_json()

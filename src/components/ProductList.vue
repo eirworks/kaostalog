@@ -13,8 +13,8 @@
             <div v-for="product in store.products">
                 <RouterLink :to="`/products/${product.id}`">
                     <div class="flex justify-center">
-                        <div class="shrink w-full h-full bg-gray-500 rounded">
-                            <img :src="product.image_urls[0]" :alt="product.name">
+                        <div class="shrink w-full h-full rounded flex justify-center">
+                            <img :src="`/products/${product.id}/preview.jpg`" :alt="product.name">
                         </div>
                     </div>
                     <div class="text-center">
