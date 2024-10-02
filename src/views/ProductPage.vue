@@ -11,8 +11,8 @@
             <div class="my-5">
                 <div class="grid md:grid-cols-3 gap-5">
                     <div class="col-span-2">
-                        <div class="mb-3 text-sm text-gray-500">Tentang produk ini</div>
-                        <div v-html="nl2br(store.product.description)"></div>
+                        <div class="mb-3 text-lg font-bold text-gray-500">{{ store.product.title }}</div>
+                        <div v-html="marked.parse(store.product.description)" class="prose"></div>
                         <!-- <div>{{ store.product.description }}</div> -->
                     </div>
                     <div>
@@ -52,6 +52,7 @@ import { useViewProductStore } from '@/store/products';
 import { useRoute } from 'vue-router';
 import ImageGallery from '@/components/ImageGallery.vue';
 import { nl2br } from '@/nl2br';
+import { marked } from 'marked';
 
 const route = useRoute()
 const store = useViewProductStore()

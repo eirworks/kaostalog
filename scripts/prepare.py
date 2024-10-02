@@ -66,12 +66,11 @@ def prepare_thumbnails():
             if os.path.basename(image) != "1.jpg":
                 continue
             dest = make_preview(image)
-            print("Thumbnail Image: {}".format(dest))
+            print("Created Thumbnail Image: {}".format(dest))
 
 if __name__ == '__main__':
     prepare_thumbnails()
-
-    # copy_products_data()
-    # extract_product_data()
-    # copy_categories_data()
-    # create_description_json()
+    copy_products_data()
+    extract_product_data()
+    copy_categories_data()
+    create_description_json()
