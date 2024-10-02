@@ -21,7 +21,7 @@ const router = createRouter({
     {
       path: "/products/:id",
       name: 'viewProduct',
-      component: () => ProductPage
+      component: ProductPage
     },
   ]
 })
